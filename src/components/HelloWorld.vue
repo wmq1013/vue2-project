@@ -96,15 +96,16 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
     msg: String,
   },
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss" scoped>
+// <style lang="scss">
 h3 {
   margin: 40px 0 0;
 }
@@ -118,5 +119,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.home {
+  background-color: blanchedalmond;
 }
 </style>
