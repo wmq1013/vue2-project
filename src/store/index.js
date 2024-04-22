@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import axios from "axios"; // 引入 Axios 用于发起 HTTP 请求
+import persistedState from 'vuex-persistedstate';
 Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
@@ -26,7 +26,6 @@ const store = new Vuex.Store({
   modules: {
     user: {
       namespaced: true, // 使用命名空间隔离模块内部状态和方法
-
       state: {
         isLoggedIn: false,
         userInfo: null,
@@ -64,5 +63,13 @@ const store = new Vuex.Store({
       },
     },
   },
+  plugins: [persistedState(
+    {
+      paths: ['count', 'user.userInfo'],
+    },
+    {
+      storage: window.localStorage
+    },
+  )],
 });
-export default store;
+export default store; 
