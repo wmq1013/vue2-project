@@ -17,8 +17,8 @@
       <router-link to="/transition">过渡与动画效果</router-link> |
       <!-- 表单处理与验证 -->
       <router-link to="/form">表单处理与验证</router-link> |
-      <!-- 自定义指令 -->
-      <router-link to="/directive">自定义指令</router-link>
+      <!-- 混合、过滤器与自定义指令 -->
+      <router-link to="/directive">混合、过滤器与自定义指令 </router-link>
       <button @click="goToRouter">跳转到路由</button>
     </nav>
     <!-- 路由切换时，keep-alive组件可以缓存组件，避免重复渲染,include匹配组件name -->
