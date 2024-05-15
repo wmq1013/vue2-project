@@ -17,7 +17,8 @@ export default {
 }
 </script>
 
-<style lang="scss" Scoped>
+<style lang="scss" scoped>
 .home {
+  background-color: antiquewhite;
 }
 </style>

@@ -15,6 +15,7 @@
     <!-- 文本渲染 -->
     文本渲染：
     <p v-text="description"></p>
+    <p>{{ description }}</p>
     <p v-html="description"></p>
     title 渲染一次：<span v-once>{{ title }}</span>
     <p v-pre>{{ description }}</p>
@@ -22,6 +23,9 @@
     <hr />
     <!-- 条件渲染 -->
     条件渲染：
+    <div v-show="isLoggedIn">
+      <button @click="logout">退出</button>
+    </div>
     <div v-if="isLoggedIn">
       <button @click="logout">退出</button>
     </div>
@@ -41,7 +45,7 @@
     循环渲染：
     <ul>
       <li
-        v-for="(item, index) in items"
+        v-for="(item, index) in demoList"
         :key="item.id"
         :class="'li-' + index"
         :style="{ color: item.color }">
@@ -61,6 +65,7 @@
     计算属性与侦听器 firstName:<input type="text" v-model="firstName" />
     lastName:<input type="text" v-model="lastName" />
     <p>计算属性 fullName: {{ fullName }} {{ fullName }}</p>
+    <!-- 监听 -->
     <p v-if="showFullName">fullName长度大于3</p>
     <p>deepObject: {{ deepObject }}</p>
     <hr />
@@ -77,7 +82,7 @@ export default {
       isLoggedIn: false,
       username: '',
       password: '',
-      items: [
+      demoList: [
         { id: 1, name: 'Item 1', color: 'red' },
         { id: 2, name: 'Item 2', color: 'green' },
         { id: 3, name: 'Item 3', color: 'aqua' },
@@ -96,6 +101,7 @@ export default {
 
   computed: {
     fullName() {
+      console.log('计算属性');
       this.deepObject.Child.lastName = this.lastName
       return `${this.firstName} ${this.lastName}`
     },
@@ -128,7 +134,7 @@ export default {
     },
 
     removeItem(index) {
-      this.items.splice(index, 1)
+      this.demoList.splice(index, 1)
     },
 
     handleClick(event) {

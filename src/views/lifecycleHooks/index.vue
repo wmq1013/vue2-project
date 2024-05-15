@@ -32,7 +32,7 @@ export default {
   mounted() {
     console.log('mounted: 组件已经渲染到页面中，可以操作DOM元素')
     this.$nextTick(() => {
-      console.log('mounted: 在$nextTick回调中执行DOM操作，确保DOM更新完毕')
+      // console.log('mounted: 在$nextTick回调中执行DOM操作，确保DOM更新完毕')
     })
   },
   beforeUpdate() {
